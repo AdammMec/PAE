@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html layout:decorate="~{layout}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/tab.css}" />
+    <link rel="stylesheet" th:href="@{/css/form.css}" />
+    <link rel="stylesheet" th:href="@{/css/main.css}" />
+
+
+    <title>Document</title>
+</head>
+<body>
+    <main layout:fragment="content">
+        <table th:unless="${courses.isEmpty()}" th:fragment="coursesTab(courses)">
+        <tr class="headtab"><td>Sigle</td><td>Titre</td><td>ECTS</td></tr>
+        <tr th:each="course: ${courses}" class="tab">
+            <td>
+                <a th:href="@{/course/{courseId}(courseId=${course.sigle})}" th:text="${course.sigle}"></a>
+            </td>
+            <td th:text="${course.titre}"></td>
+            <td th:text="${course.ects}" class="ects"></td>
+        </tr>
+    </table>
+    <span th:if="${courses.isEmpty()}">(Aucun cours)</span>
+
+
+    <form action="/urlCtrl" th:object="${newcourse}" method="post">
+            <h1>Ajouter un cours</h1>
+            <label for="sigle">Sigle</label>
+            <input type="text" placeholder="Entrez le sigle du cours..." th:field="*{sigle}">
+            <span th:errors="*{sigle}" class="errorMsg">erreur</span>
+
+            <label for="titre">Nom</label>
+            <input type="text" placeholder="Entrez le titre du cours..." th:field="*{titre}">
+            <span th:errors="*{titre}" class="errorMsg">erreur</span>
+
+            <label for="ects">ECTS</label>
+            <input type="number" th:field="*{ects}">
+            <span th:errors="*{ects}" class="errorMsg">erreur</span>
+
+            <button type="submit">Ajouter</button>
+    </form>
+    </main>
+    
+</body>
+</html>

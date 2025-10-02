@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html layout:decorate="~{layout}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/tab.css}" />
+    <link rel="stylesheet" th:href="@{/css/form.css}" />
+    <link rel="stylesheet" th:href="@{/css/main.css}" />
+    <title>Document</title>
+</head>
+<body>
+    <main layout:fragment="content">
+        <table th:unless="${students.isEmpty()}" th:fragment="studentTab(students)">
+            <tr class="headtab">
+                <td>Matricule</td>
+                <td>Nom</td>
+                <td>Section</td>
+                <td>Genre</td>
+            </tr>
+            <tr th:each="student : ${students}" class="tab">
+                <td class="matricule">
+                    <a th:href="@{/student/{studentMatricule}(studentMatricule=${student.matricule})}" th:text="${student.matricule}"></a>
+                </td>
+                <td th:text="${student.name}"></td>
+                <td th:text="${student.section}"></td>
+                <td th:text="${student.genre}"></td>
+            </tr>
+        </table>
+        <span th:if="${students.isEmpty()}">(Aucun étudiants)</span>
+    </main>
+
+</body>
+</html>
+

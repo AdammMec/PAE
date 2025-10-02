@@ -1,0 +1,45 @@
+form {
+    border: 1px solid #414141;
+    border-radius: 3px;
+    width: 187px;
+    max-height: fit-content;
+}
+
+form h1{
+    color: white;
+    font-size: 15px;
+    background-color: #236ab9;
+    text-align: center;
+    margin: auto;
+    padding: 5px;
+}
+
+form label{
+    display: block;
+    margin-bottom: 3px;
+    padding: 5px;
+}
+
+form input{
+    margin-left: 5px;
+}
+
+form button{
+    margin: 5px;
+    margin-left: 57px;
+    color: white;
+    background-color: #236ab9;
+    border-radius: 4px;
+    padding: 8px;
+    border: none;
+
+}
+
+form button:hover{
+    background-color: #124279;
+}
+
+span{
+    color: red;
+    margin-left: 10px;
+}

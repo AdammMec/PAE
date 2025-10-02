@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html layout:decorate="~{layout}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/tab.css}" />
+    <link rel="stylesheet" th:href="@{/css/main.css}" />
+
+    <title>Document</title>
+</head>
+<body>
+    
+    
+    <main layout:fragment="content">
+        <table>
+        <tr>
+            <td class="headtab"> Sigle </td>
+            <td th:text="${course.sigle}"></td>
+        </tr>
+        <tr>
+            <td class="headtab"> Titre </td>
+            <td th:text="${course.titre}"></td>
+        </tr>
+        <tr>
+            <td class="headtab"> Crédits </td>
+            <td th:text="${course.ects}"></td>
+        </tr>
+        </table>
+
+        <table th:unless="${course.students.isEmpty()}" th:replace="~{students.html::studentTab(students=${course.students})}"></table>
+
+        <span th:if="${course.students.isEmpty()}">(Aucun étudiants)</span>
+
+        <a th:href="@{/courses}">Retour à la liste des cours</a>
+    </main>
+    
+</body>
+</html>

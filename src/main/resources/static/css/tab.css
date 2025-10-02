@@ -1,0 +1,31 @@
+table {
+    border-collapse: collapse;
+    border: 2px solid rgb(114, 114, 114);
+    max-width: 400px;
+    width: auto;        
+    height: auto;       
+}
+
+td {
+    padding: 4px 8px;   
+    width: auto;        
+    height: auto;       
+}
+
+tr {
+    height: auto;       
+}
+
+.headtab {
+    background-color: #236ab9;
+    color: white;
+    margin: 10px;
+}
+
+.ects {
+    text-align: center;
+}
+
+table {
+    align-self: flex-start;
+}

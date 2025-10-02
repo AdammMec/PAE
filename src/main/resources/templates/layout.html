@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+    <title>Document</title>
+</head>
+<body>
+    <div class="head">
+        <div class="logo">
+            <img src="https://he2b.be/wp-content/themes/he2b/assets/img/logo-he2b-white.png" alt="" srcset="" class="logo">
+        </div>
+        <h1>Programme annuel des étudiants</h1>
+    </div>
+    <div class="menu">
+        <a th:href="@{/}">🏠</a>
+        <a th:href="@{/courses}">Cours</a>
+        <a th:href="@{/students}">Etudiant</a>
+    </div>
+    <main layout:fragment="content">
+
+    </main>
+    
+    <div class="footer">
+        HE2B-ESI 2024-2025
+    </div>
+</body>
+</html>
